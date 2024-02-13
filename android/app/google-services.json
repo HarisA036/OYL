@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "155101146151",
+    "firebase_url": "https://oyl-project-7fb82-default-rtdb.firebaseio.com",
+    "project_id": "oyl-project-7fb82",
+    "storage_bucket": "oyl-project-7fb82.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:155101146151:android:07e9bc042d7ec2faabf202",
+        "android_client_info": {
+          "package_name": "com.oyl"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCAvveI1jQ6znnFjENUSJQVT4nFSyeV9Zo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

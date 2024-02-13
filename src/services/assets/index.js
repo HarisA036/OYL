@@ -1,0 +1,31 @@
+const appIcons ={
+    Logo: require('../../assets/images/OylLogoYellow.png'),
+    Arrow: require('../../assets/images/arrowBackIcon.png'),
+    EyeIcon: require('../../assets/images/eyeIcon.png'),
+    Check: require('../../assets/images/checkedcircle.png'),
+    Unchecked: require('../../assets/images/uncheckedcircle.png'),
+    Background: require('../../assets/images/background.png'),
+    CalendarIcon: require('../../assets/images/calendar.png'),
+    AccountIcon: require('../../assets/images/accountIcon.png'),
+    HomeIcon: require('../../assets/images/homeIcon.png'),
+    LocationModal: require('../../assets/images/locationModalIcon.png'),
+    LoctionIcon: require('../../assets/images/loctionIcon.png'),
+    Thumbsup: require('../../assets/images/thumbsup.png'),
+    FbLogo: require('../../assets/images/fb-logo.png'),
+    InstaLogo: require('../../assets/images/insta-logo.png'),
+    RightIcon: require('../../assets/images/righticon.png'),
+    CheckIcon: require('../../assets/images/checkCircle.png'),
+    Tick: require('../../assets/images/tick.png'),
+    TickBox: require('../../assets/images/box.png'),
+    Stripe: require('../../assets/images/stripelogo.png'),
+    Klarna: require('../../assets/images/klarnalogo.png'),
+    Bitpay: require('../../assets/images/bitpaylogo.png'),
+    Apple: require('../../assets/images/applelogo.png'),
+    Android: require('../../assets/images/androidlogo.png'),
+    Affirm: require('../../assets/images/affirmlogo.png'),
+    PaymentIcon: require('../../assets/images/payment.png'),
+    DownArrow: require('../../assets/images/downArrow.png'),
+
+};
+
+export {appIcons}
