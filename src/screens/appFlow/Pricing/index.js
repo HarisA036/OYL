@@ -10,9 +10,15 @@ import CustomModal from "../../../components/Modal";
 import { responsiveFontSize, responsiveWidth } from "react-native-responsive-dimensions";
 
 const Pricing = ({ navigation }) => {
+
     const [isPaymentMethodVisible, setPaymentMethodVisible] = useState(false);
     const [isPaymentSuccessfulVisible, setPaymentSuccessfulVisible] = useState(false);
     const [activeModal, setActiveModal] = useState(null);
+    const [cardHolderName, setCardHolderName] = useState('');
+    const [cardNumber, setCardNumber] = useState('');
+    const [mm, setMM] = useState("");
+    const [yy, setYY] = useState("");
+    const [cvv, setCVV] = useState("");
 
     const handleSaveButtonPress = () => {
         setActiveModal("paymentsuccess");
@@ -63,6 +69,16 @@ const Pricing = ({ navigation }) => {
                         isVisible={isPaymentMethodVisible}
                         paymentModal={activeModal === "payment"} // Pass the active modal as a prop
                         onSaveButtonPress={handleSaveButtonPress}
+                        nameValue={cardHolderName}
+                        changenameText={(text) => setCardHolderName(text)}
+                        numberValue={cardNumber}
+                        changeNumberText={(text) => setCardNumber(text)}
+                        mmvalue={mm}
+                        changeMMText={(text) => setMM(text)}
+                        yyValue={yy}
+                        changeYYText={(text) => setYY(text)}
+                        cvvValue={cvv}
+                        changeCVVText={(text) => setCVV(text)}
                     />
                     <CustomModal
                         isVisible={isPaymentSuccessfulVisible}

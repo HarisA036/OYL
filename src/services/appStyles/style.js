@@ -1,4 +1,4 @@
-import { Platform, StyleSheet } from 'react-native';
+import { StyleSheet } from 'react-native';
 import { responsiveHeight, responsiveWidth, responsiveFontSize } from 'react-native-responsive-dimensions';
 import { fontFamily } from '../fonts';
 import { colors } from '../colors';
@@ -244,13 +244,6 @@ export const appStyle = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'center',
-    },
-    visibilityIcon: {
-        width: responsiveWidth(4.3),
-        height: responsiveHeight(2.3),
-        alignSelf: 'flex-end',
-        marginRight: responsiveWidth(3),
-        marginTop: responsiveHeight(-6),
     },
     lgBtnContainer: {
         borderRadius: 30,
@@ -577,7 +570,7 @@ export const appStyle = StyleSheet.create({
         flexDirection: 'column',
         alignSelf: 'center',
         shadowColor: colors.color18,
-        height: responsiveHeight(9),
+        // height: responsiveHeight(9),
         marginTop: responsiveHeight(3),
     },
     vehicleFT: {
@@ -707,7 +700,7 @@ export const appStyle = StyleSheet.create({
         borderBottomLeftRadius: 20,
         borderBottomRightRadius: 20,
         justifyContent: 'flex-end',
-       flex: 1,
+        flex: 1,
     },
     amountT1: {
         color: colors.color5,
@@ -847,7 +840,7 @@ export const appStyle = StyleSheet.create({
         width: responsiveWidth(20),
         height: responsiveHeight(5.2),
         alignSelf: 'center',
-        marginRight: responsiveWidth(5),        
+        marginRight: responsiveWidth(5),
     },
     paymentinputT: {
         fontSize: fontsizes.F5,
@@ -856,7 +849,7 @@ export const appStyle = StyleSheet.create({
         marginLeft: responsiveWidth(2),
         textAlignVertical: 'center',
     },
-    validView:{
+    validView: {
         flexDirection: 'row',
         marginLeft: responsiveWidth(4),
         alignItems: 'center',

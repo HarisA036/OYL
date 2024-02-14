@@ -23,15 +23,20 @@ const CustomModal = ({
     value,
     onChangeText,
     visible,
+    mmvalue,
+    changeMMText,
+    yyValue,
+    changeYYText,
+    cvvValue,
+    changeCVVText,
+    numberValue,
+    changeNumberText,
+    changenameText,
+    nameValue,
 
 }) => {
 
     const navigation = useNavigation();
-    const [cardHolderName, setCardHolderName] = useState('');
-    const [cardNumber, setCardNumber] = useState('');
-    const [mm, setMM] = useState("");
-    const [yy, setYY] = useState("");
-    const [cvv, setCVV] = useState("");
     const [dateScheduled, setDateScheduled] = useState(null);
 
     useEffect(() => {
@@ -41,13 +46,13 @@ const CustomModal = ({
         nextDate.setDate(currentDate.getDate() + 1); // Change +1 to the desired number of days
         setDateScheduled(nextDate.toDateString());
     }, []);
-    
+
 
     if (locationModal) {
         return (
             <Modal
                 transparent={true}
-                visible={isVisible}
+                isVisible={isVisible}
                 animationType='slide'
                 onRequestClose={closeModal}
             >
@@ -116,12 +121,14 @@ const CustomModal = ({
             >
                 <View style={appStyle.centeredView}>
                     <View style={appStyle.oilModal}>
-                        <View style={appStyle.vehiclecontainer2}>
+                        <View style={appStyle.vehiclecontainer}>
                             <Text style={appStyle.vehicleFT}>Oil type</Text>
                             <Text style={appStyle.oilTypetxt}>Please select Oil type from here</Text>
                             <Text style={appStyle.oilTypetxt2}>(All Oil High Quality Synthetic)</Text>
-                            <Image
-                                source={appIcons.DownArrow} style={appStyle.visibilityIcon} />
+                            <View style={appStyle.visibilityButtonV}>
+                                <Image
+                                    source={appIcons.DownArrow} />
+                            </View>
                         </View>
                         <View style={appStyle.oilInnerModal}>
                             <TouchableWithoutFeedback onPress={() => {
@@ -232,8 +239,8 @@ const CustomModal = ({
                                     placeholder="Card holder name"
                                     placeholderTextColor={colors.color3}
                                     keyboardType="default"
-                                    onChangeText={(text) => setCardHolderName(text)}
-                                    value={cardHolderName} />
+                                    onChangeText={changenameText}
+                                    value={nameValue} />
                             </View>
                             <View style={appStyle.paymentinputC}>
                                 <TextInput
@@ -242,8 +249,8 @@ const CustomModal = ({
                                     placeholderTextColor={colors.color3}
                                     keyboardType="numeric"
                                     maxLength={19}
-                                    onChangeText={(text) => setCardNumber(text)}
-                                    value={cardNumber} />
+                                    onChangeText={changeNumberText}
+                                    value={numberValue} />
                             </View>
                             <Text style={appStyle.simpleT}>VALID THRU</Text>
                             <View style={appStyle.validView}>
@@ -252,8 +259,8 @@ const CustomModal = ({
                                         style={appStyle.paymentinputT}
                                         placeholder="MM"
                                         keyboardType="numeric"
-                                        value={mm}
-                                        onChangeText={setMM}
+                                        value={mmvalue}
+                                        onChangeText={changeMMText}
                                         maxLength={2}
                                     />
                                 </View>
@@ -262,8 +269,8 @@ const CustomModal = ({
                                         style={appStyle.paymentinputT}
                                         placeholder="YY"
                                         keyboardType="numeric"
-                                        value={yy}
-                                        onChangeText={setYY}
+                                        value={yyValue}
+                                        onChangeText={changeYYText}
                                         maxLength={2}
                                     />
                                 </View>
@@ -272,8 +279,8 @@ const CustomModal = ({
                                         style={appStyle.paymentinputT}
                                         placeholder="CVV"
                                         keyboardType="numeric"
-                                        value={cvv}
-                                        onChangeText={setCVV}
+                                        value={cvvValue}
+                                        onChangeText={changeCVVText}
                                         maxLength={3}
                                     />
                                 </View>

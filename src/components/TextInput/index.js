@@ -1,9 +1,10 @@
 import React, { useState } from "react"
-import { Image, Text, TextInput, TouchableOpacity, View } from "react-native";
+import { Image, StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
 import { appIcons } from "../../services/assets";
 import { appStyle } from "../../services/appStyles/style";
 import DateTimePicker from "@react-native-community/datetimepicker";
 import CustomModal from "../Modal";
+import { responsiveHeight, responsiveWidth } from "react-native-responsive-dimensions";
 
 const CustomTextInput = ({
 
@@ -72,26 +73,32 @@ const CustomTextInput = ({
       />
 
       {showCalendarImage && (
-        <TouchableOpacity onPress={showDatePicker}>
-          <Image
-            source={appIcons.CalendarIcon} style={appStyle.visibilityIcon}
-          />
-        </TouchableOpacity>
+        <View style={Style.visibilityButtonV}>
+          <TouchableOpacity onPress={showDatePicker}>
+            <Image
+              source={appIcons.CalendarIcon}
+            />
+          </TouchableOpacity>
+          </View>
       )}
-
       {showLocationImage && (
-        <TouchableOpacity
-          onPress={handleShowLocation}>
-          <Image
-            source={appIcons.LoctionIcon} style={appStyle.visibilityIcon}
-          />
-        </TouchableOpacity>
+        <View style={appStyle.visibilityButtonV}>
+          <TouchableOpacity
+            onPress={handleShowLocation}>
+            <Image
+              source={appIcons.LoctionIcon}
+            />
+          </TouchableOpacity>
+        </View>
       )}
       {showDownImage && (
-        <TouchableOpacity onPress={onPressDownImage}>
-          <Image
-            source={appIcons.DownArrow} style={appStyle.visibilityIcon} />
-        </TouchableOpacity>
+        <View style={appStyle.visibilityButtonV}>
+          <TouchableOpacity onPress={onPressDownImage}>
+            <Image
+              source={appIcons.DownArrow}
+            />
+          </TouchableOpacity>
+        </View>
       )}
       {isDatePickerVisible && (
         <DateTimePicker
@@ -115,3 +122,12 @@ const CustomTextInput = ({
   )
 };
 export default CustomTextInput;
+export const Style = StyleSheet.create({
+
+visibilityButtonV: {
+  marginTop: responsiveHeight(3.5),
+  alignSelf: 'flex-end',
+  position: 'absolute',
+  paddingRight: responsiveWidth(3),
+},
+})

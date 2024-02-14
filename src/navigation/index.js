@@ -10,7 +10,7 @@ const Navigation = () => {
     return (
         <NavigationContainer>
             <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName="AuthNavigation">
-                {/* <Stack.Screen name="AuthNavigation" component={AuthNavigation} /> */}
+                <Stack.Screen name="AuthNavigation" component={AuthNavigation} />
                 <Stack.Screen name="AppNavigation" component={AppNavigation} />
             </Stack.Navigator>
         </NavigationContainer>

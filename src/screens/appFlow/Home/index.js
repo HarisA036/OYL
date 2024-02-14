@@ -53,7 +53,7 @@ const Home = ({ navigation }) => {
     };
     const handleShowLocation = () => {
         setIsVisible(true);
-        // setActiveModal("location"); // Set activeModal to "location"
+        setActiveModal("location"); // Set activeModal to "location"
     };
     const handleShowOilModal = () => {
         setActiveModal("Oil");
@@ -105,19 +105,19 @@ const Home = ({ navigation }) => {
             setLoading(true);
             const userId = auth().currentUser.uid; // Retrieve the user ID
             await firestore()
-            .collection('Appointments')
-            .doc(userId)
-            .set({
-                dateIndex: selectedDateIndex,
-                hour: enteredHour,
-                minute: enteredMinute,
-                period: amSelected ? 'AM' : 'PM',
-                location: enteredLocation,
-                oilType: oilType,
-                userId: auth().currentUser.uid, // Add the user ID or any identifier for the user
-                timestamp: firestore.FieldValue.serverTimestamp(), // Optional: Add a timestamp
-            });
-            navigation.navigate (VehicleInfo);
+                .collection('Appointments')
+                .doc(userId)
+                .set({
+                    dateIndex: selectedDateIndex,
+                    hour: enteredHour,
+                    minute: enteredMinute,
+                    period: amSelected ? 'AM' : 'PM',
+                    location: enteredLocation,
+                    oilType: oilType,
+                    userId: auth().currentUser.uid, // Add the user ID or any identifier for the user
+                    timestamp: firestore.FieldValue.serverTimestamp(), // Optional: Add a timestamp
+                });
+            navigation.navigate(VehicleInfo);
         } catch (error) {
             console.error("Error saving data to Firestore:", error);
             Alert.alert("Error", "An error occurred while processing your request. Please try again.");
@@ -228,10 +228,12 @@ const Home = ({ navigation }) => {
                     <Text style={appStyle.vehicleFT}>Oil type</Text>
                     <Text style={appStyle.oilTypetxt}>Please select Oil type from here</Text>
                     <Text style={appStyle.oilTypetxt2}>(All Oil High Quality Synthetic)</Text>
-                    <TouchableOpacity onPress={handleShowOilModal}>
-                        <Image
-                            source={appIcons.DownArrow} style={appStyle.visibilityIcon} />
-                    </TouchableOpacity>
+                    <View style={appStyle.visibilityButtonV}>
+                        <TouchableOpacity onPress={handleShowOilModal}>
+                            <Image
+                                source={appIcons.DownArrow} />
+                        </TouchableOpacity>
+                    </View>
                 </View>
 
                 <CustomButton
@@ -241,6 +243,10 @@ const Home = ({ navigation }) => {
                     Tstyle={appStyle.loginbtnT}
                     onPress={handleLockIn}
                 />
+                {/* <CustomModal
+                    OilModal={activeModal === "location"}
+                    isVisible={isOilModalVisible}
+                /> */}
                 <CustomModal
                     OilModal={activeModal === "Oil"}
                     visible={isOilModalVisible}
