@@ -40,13 +40,11 @@ const CustomModal = ({
     const [dateScheduled, setDateScheduled] = useState(null);
 
     useEffect(() => {
-        // Calculate the next date
         const currentDate = new Date();
         const nextDate = new Date(currentDate);
         nextDate.setDate(currentDate.getDate() + 1); // Change +1 to the desired number of days
         setDateScheduled(nextDate.toDateString());
     }, []);
-
 
     if (locationModal) {
         return (
@@ -54,8 +52,7 @@ const CustomModal = ({
                 transparent={true}
                 isVisible={isVisible}
                 animationType='slide'
-                onRequestClose={closeModal}
-            >
+                onRequestClose={closeModal} >
                 <View style={appStyle.centeredView}>
                     <View style={appStyle.modalView}>
                         <View style={appStyle.imageV}>
@@ -91,8 +88,7 @@ const CustomModal = ({
                 transparent={false}
                 isVisible={isVisible}
                 animationType='slide'
-                onRequestClose={closeModal}
-            >
+                onRequestClose={closeModal}>
                 <View style={appStyle.vehiclemodalV}>
                     <View style={appStyle.vehicleinnerV}>
                         <ImageBackground source={appIcons.Background} style={appStyle.vehiclebg} >
@@ -117,8 +113,7 @@ const CustomModal = ({
                 transparent={true}
                 visible={visible}
                 animationType='slide'
-                onRequestClose={closeModal}
-            >
+                onRequestClose={closeModal}>
                 <View style={appStyle.centeredView}>
                     <View style={appStyle.oilModal}>
                         <View style={appStyle.vehiclecontainer}>

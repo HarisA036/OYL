@@ -29,6 +29,7 @@ const Pricing = ({ navigation }) => {
         setActiveModal("payment");
         setPaymentMethodVisible(true);
     };
+
     return (
         <SafeAreaView style={{ flex: 1 }}>
             <Header
@@ -88,6 +89,6 @@ const Pricing = ({ navigation }) => {
                 </ScrollView>
             </ImageBackground>
         </SafeAreaView>
-    )
+    );
 };
 export default Pricing;

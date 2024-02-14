@@ -59,6 +59,7 @@ const CustomTextInput = ({
   };
 
   return (
+
     <View style={containerStyle}>
       <Text style={firstTstyle}>{firstT}</Text>
       <TextInput
@@ -69,8 +70,7 @@ const CustomTextInput = ({
         keyboardType={keyboardType}
         onChangeText={onChangeText}
         value={value}
-        editable={editable}
-      />
+        editable={editable} />
 
       {showCalendarImage && (
         <View style={Style.visibilityButtonV}>
@@ -79,8 +79,9 @@ const CustomTextInput = ({
               source={appIcons.CalendarIcon}
             />
           </TouchableOpacity>
-          </View>
+        </View>
       )}
+
       {showLocationImage && (
         <View style={appStyle.visibilityButtonV}>
           <TouchableOpacity
@@ -91,6 +92,7 @@ const CustomTextInput = ({
           </TouchableOpacity>
         </View>
       )}
+
       {showDownImage && (
         <View style={appStyle.visibilityButtonV}>
           <TouchableOpacity onPress={onPressDownImage}>
@@ -100,6 +102,7 @@ const CustomTextInput = ({
           </TouchableOpacity>
         </View>
       )}
+
       {isDatePickerVisible && (
         <DateTimePicker
           value={selectedDate}
@@ -109,6 +112,7 @@ const CustomTextInput = ({
           format="day month year"
         />
       )}
+
       {isLocationModalVisiable && (
         <CustomModal
           isVisible={isLocationModalVisiable}
@@ -124,10 +128,10 @@ const CustomTextInput = ({
 export default CustomTextInput;
 export const Style = StyleSheet.create({
 
-visibilityButtonV: {
-  marginTop: responsiveHeight(3.5),
-  alignSelf: 'flex-end',
-  position: 'absolute',
-  paddingRight: responsiveWidth(3),
-},
+  visibilityButtonV: {
+    marginTop: responsiveHeight(3.5),
+    alignSelf: 'flex-end',
+    position: 'absolute',
+    paddingRight: responsiveWidth(3),
+  },
 })

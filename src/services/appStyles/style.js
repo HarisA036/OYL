@@ -594,7 +594,6 @@ export const appStyle = StyleSheet.create({
         color: colors.color29,
         fontSize: fontsizes.F6,
         fontFamily: fontFamily.RobotoBold,
-        // opacity: 0.8,
     },
     oilTypetxt2: {
         marginLeft: responsiveWidth(5),
@@ -951,7 +950,6 @@ export const appStyle = StyleSheet.create({
         justifyContent: 'center',
     },
     manufacture: {
-        // fontSize: fontSize.,
         marginLeft: responsiveWidth(5),
         color: colors.color2
     },

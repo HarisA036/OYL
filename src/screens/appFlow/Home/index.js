@@ -126,7 +126,6 @@ const Home = ({ navigation }) => {
         }
     };
 
-
     return (
         <SafeAreaView style={{ backgroundColor: colors.color4, flex: 1 }}>
             <View style={appStyle.homeHeaderV}>
@@ -243,10 +242,6 @@ const Home = ({ navigation }) => {
                     Tstyle={appStyle.loginbtnT}
                     onPress={handleLockIn}
                 />
-                {/* <CustomModal
-                    OilModal={activeModal === "location"}
-                    isVisible={isOilModalVisible}
-                /> */}
                 <CustomModal
                     OilModal={activeModal === "Oil"}
                     visible={isOilModalVisible}
